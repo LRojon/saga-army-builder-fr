@@ -53,10 +53,10 @@ const ArmyViewerMobile: React.FC<
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ padding: "8px" }} align="left">
-                    Armour Melee(Shooting)
+                    Armure CaC (Tir)
                   </TableCell>
                   <TableCell sx={{ padding: "8px" }} align="left">
-                    Aggression Melee(Shooting)
+                    Agréssivité CaC (Tir)
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -71,17 +71,17 @@ const ArmyViewerMobile: React.FC<
                   <TableCell
                     sx={{ padding: "8px" }}
                     align="center"
-                  >{`${unit.armour.melee}(${unit.armour.shooting})`}</TableCell>
+                  >{`${unit.armour.melee} (${unit.armour.shooting})`}</TableCell>
                   <TableCell
                     sx={{ padding: "8px" }}
                     align="center"
-                  >{`${unit.aggression.melee}(${unit.aggression.shooting})`}</TableCell>
+                  >{`${unit.aggression.melee} (${unit.aggression.shooting})`}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
             {!!unit.specialRules.length && (
               <Typography variant="body2" component="p">
-                Special rules: {unit.specialRules.join(", ")}
+                Règles spéciales: {unit.specialRules.join(", ")}
               </Typography>
             )}
           </CardContent>

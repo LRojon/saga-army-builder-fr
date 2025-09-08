@@ -10,15 +10,12 @@ import TableBody from "@mui/material/TableBody";
 import { Unit, UnitDetails } from "../ArmyUnitTypes";
 
 const style = {
-  position: "absolute" as "absolute",
+  /*position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 1000,
+  transform: "translate(-50%, -50%)",*/
+  //width: 1000,
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
 };
 
 interface ArmyViewerInterface {
@@ -32,14 +29,12 @@ const ArmyViewerDesktop: React.FC<ArmyViewerInterface> = ({ units }) => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Unit</TableCell>
-              <TableCell>Size</TableCell>
-              <TableCell>Equipment&nbsp;Options</TableCell>
-              <TableCell align="right">Armour&nbsp;Melee(Shooting)</TableCell>
-              <TableCell align="right">
-                Aggression&nbsp;Melee(Shooting)
-              </TableCell>
-              <TableCell align="right">Special Rules</TableCell>
+              <TableCell>Unité</TableCell>
+              <TableCell>Taille</TableCell>
+              <TableCell>Options d'équipement</TableCell>
+              <TableCell align="right">Armure CaC (Tir)</TableCell>
+              <TableCell align="right">Agréssivité CaC (Tir)</TableCell>
+              <TableCell align="right">Règles spécials</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -57,8 +52,8 @@ const ArmyViewerDesktop: React.FC<ArmyViewerInterface> = ({ units }) => {
                 </TableCell>
                 <TableCell align="right">{unit.unitSize}</TableCell>
                 <TableCell align="right">{unit.equipmentOptions}</TableCell>
-                <TableCell align="right">{`${unit.armour.melee}(${unit.armour.shooting})`}</TableCell>
-                <TableCell align="right">{`${unit.aggression.melee}(${unit.aggression.shooting})`}</TableCell>
+                <TableCell align="right">{`${unit.armour.melee} (${unit.armour.shooting})`}</TableCell>
+                <TableCell align="right">{`${unit.aggression.melee} (${unit.aggression.shooting})`}</TableCell>
                 <TableCell align="right" width={250}>
                   {unit.specialRules.join(", ")}
                 </TableCell>

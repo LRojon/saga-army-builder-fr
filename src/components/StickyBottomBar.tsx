@@ -15,9 +15,9 @@ const StickyBottomBar = () => {
       <AppBar position={"fixed"} sx={{ bottom: 0, top: "auto" }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography color="inherit" noWrap>
-            Points Remaining: {currentPoints}
+            Points Restants: {currentPoints}
           </Typography>
-          <Button onClick={handleOpen}>View Army</Button>
+          <Button onClick={handleOpen}>Regardée l'armée</Button>
         </Toolbar>
       </AppBar>
       <Modal

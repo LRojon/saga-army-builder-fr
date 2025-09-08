@@ -18,7 +18,7 @@ const ArmySelectorButtonGroup: FC<{ handleSetArmy: handleArmyType }> = ({
         maxWidth: "100%",
       }}
     >
-      <Typography gutterBottom>Select a Faction</Typography>
+      <Typography gutterBottom>Choisissez votre faction</Typography>
       <ButtonGroup
         variant="contained"
         aria-label="outlined primary button group"

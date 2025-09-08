@@ -17,7 +17,9 @@ const darkTheme = createTheme({
 const Providers: React.FC<any> = ({ children }) => {
   const savedArmy = decodeUrlParams();
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider
+      theme={darkTheme}
+    >
       <ErrorProvider>
         <SuccessProvider>
           <UnitProvider>

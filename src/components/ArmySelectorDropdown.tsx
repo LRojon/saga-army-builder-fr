@@ -27,9 +27,9 @@ const ArmySelectorDropdown: FC<{
         maxWidth: "100%",
       }}
     >
-      <Typography gutterBottom>Select a Faction</Typography>
+      <Typography gutterBottom>Choisissez votre faction</Typography>
       <FormControl fullWidth>
-        <InputLabel id="army-select-label">Army</InputLabel>
+        <InputLabel id="army-select-label">Armée</InputLabel>
         <Select
           labelId="army-select-label"
           id="army-select-select"
@@ -45,7 +45,7 @@ const ArmySelectorDropdown: FC<{
             </MenuItem>
           ))}
         </Select>
-        <FormHelperText>Select you army</FormHelperText>
+        <FormHelperText>Selectionez votre armée</FormHelperText>
       </FormControl>
     </Box>
   );

@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               marginRight: theme.spacing(1),
             }}
           >
-            Found a bug? Reach me on{" "}
+            Vous avez trouver un bug ? Parlez m'en sur {" "}
             <IconButton
               aria-label="Twitter"
               href="https://twitter.com/Josephl83378898"
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             >
               <TwitterIcon />
             </IconButton>
-            or if you're a real Chad add an issue to my{" "}
+            ou si vous êtes un giga chad, ajoutez une issue sur {" "}
             <IconButton
               aria-label="GitHub"
               href="https://github.com/joe-lloyd/saga-army-builder/issues"
@@ -48,6 +48,7 @@ const Footer: React.FC = () => {
             >
               <GitHubIcon />
             </IconButton>
+            (repo de base du projet)
           </span>
         </div>
       </footer>

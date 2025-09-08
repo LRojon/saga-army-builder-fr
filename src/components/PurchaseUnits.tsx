@@ -7,6 +7,7 @@ import { checkUnitViabilityPoints } from "../helpers/checkUnitViabilityPoints";
 import { ErrorContext } from "../contexts/errorContext";
 import { SuccessContext } from "../contexts/successContext";
 import { UnitContext } from "../contexts/unitContext";
+import EventManager from "../helpers/EventManager";
 const ArmyTable = loadable(() => import("./PurchaseUnitsTable"));
 const ArmyCard = loadable(() => import("./PurchaseUnitsCards"));
 
@@ -45,13 +46,15 @@ const PurchaseUnits: React.FC<{
       spendPoints(unit.cost.points || 0);
       setSuccess(`${unit.unit} ${unit.equipmentOptions} added`);
       setError("");
+      EventManager.emit("unitsChanged");
     }
   };
 
   const handleRemoveUnitPoints = (unit: UnitDetails<Unit>) => {
-    receivePoints(unit.cost.points || 0);
-    removeUnit(unit);
-    setSuccess(`${unit.unit} ${unit.equipmentOptions} removed`);
+  receivePoints(unit.cost.points || 0);
+  removeUnit(unit);
+  setSuccess(`${unit.unit} ${unit.equipmentOptions} removed`);
+  EventManager.emit("unitsChanged");
   };
 
   const handleRemoveUnitUnits = (unit: UnitDetails<Unit>) => {
@@ -63,10 +66,10 @@ const PurchaseUnits: React.FC<{
         currentUnit.unitPaidFor === thisUnitInYourUnitsList.costId
     ) as UnitDetails<Unit>;
 
-    removeUnit(unit);
-    removeUnit(unitYouUsedToPayFor);
-
-    setSuccess(`${unit.unit} ${unit.equipmentOptions} removed`);
+  removeUnit(unit);
+  removeUnit(unitYouUsedToPayFor);
+  setSuccess(`${unit.unit} ${unit.equipmentOptions} removed`);
+  EventManager.emit("unitsChanged");
   };
 
   const unitExists = (unit: UnitDetails<Unit>) =>

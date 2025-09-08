@@ -73,7 +73,7 @@ const UnitCostDialog: React.FC<UnitCostDialogInterface> = ({
 
   return (
     <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
-      <DialogTitle>Fill the form</DialogTitle>
+      <DialogTitle>Séléctionner</DialogTitle>
       <DialogContent>
         <Box component="form" sx={{ display: "flex", flexWrap: "wrap" }}>
           <List sx={style} component="nav">
@@ -91,7 +91,7 @@ const UnitCostDialog: React.FC<UnitCostDialogInterface> = ({
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleClose}>Annuler</Button>
         <Button onClick={handleClose}>Ok</Button>
       </DialogActions>
     </Dialog>

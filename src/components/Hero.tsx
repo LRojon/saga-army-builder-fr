@@ -26,10 +26,10 @@ const Hero = () => {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          Saga: Age of magic
+          Saga: L'Âge de la Magie
         </Typography>
         <Typography variant="h5" component="h1" gutterBottom>
-          Army builder
+          Créateur d'armée
         </Typography>
         <Card
           sx={{
@@ -57,7 +57,7 @@ const Hero = () => {
               }}
             />
             <FormHelperText id="full-points-helper-text">
-              Total Points
+              Points Totaux
             </FormHelperText>
           </FormControl>
           <FormControl sx={{ m: 1, width: "20ch" }} variant="outlined">
@@ -73,7 +73,7 @@ const Hero = () => {
               disabled
             />
             <FormHelperText id="current-points-helper-text">
-              Points left
+              Points restants
             </FormHelperText>
           </FormControl>
         </Card>

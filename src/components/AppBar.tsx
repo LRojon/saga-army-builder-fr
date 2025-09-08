@@ -35,7 +35,7 @@ const AppBarWithMenu = () => {
               SAGA
             </Typography>
             <Button color="inherit" onClick={() => setOpenSaveModal(true)}>
-              Save Army
+              Enregistrer l'armée
             </Button>
             <SaveArmyDialog open={openSaveModal} setOpen={setOpenSaveModal} />
           </Toolbar>
