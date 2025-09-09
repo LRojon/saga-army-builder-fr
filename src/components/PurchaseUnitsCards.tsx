@@ -15,6 +15,7 @@ import {
 import { checkUnitCanBeBoughtWithAnyUnitInCurrentArmy } from "../helpers/checkUnitViabilityPoints";
 import { UnitCostDialog } from "./UnitCostDialog";
 import { Unit, UnitDetails } from "../ArmyUnitTypes";
+import { t, Translation } from "../helpers/translator";
 
 interface UnitsProps {
   units: UnitDetails<Unit>[];
@@ -58,10 +59,10 @@ const ArmyCard: React.FC<UnitsProps> = ({
         >
           <CardContent>
             <Typography variant="h5" component="h2">
-              {unit.unit}
+              {t(unit.unit as Translation)}
               {unit.equipmentOptions === "None"
                 ? ""
-                : `: ${unit.equipmentOptions.split(/(?=[A-Z])/).join(" ")}`}
+                : `: ${t(unit.equipmentOptions as Translation)}`}
             </Typography>
             <Table sx={{ maxWidth: "100%" }} aria-label="simple table">
               <TableHead>
@@ -95,7 +96,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
             </Table>
             {!!unit.specialRules.length && (
               <Typography variant="body2" component="p">
-                Règles spéciales: {unit.specialRules.join(", ")}
+                Règles spéciales: {unit.specialRules.map((rule) => t(rule as Translation)).join(", ")}
               </Typography>
             )}
           </CardContent>
@@ -110,7 +111,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
                     size="small"
                     onClick={() => setOpenUnitCostDialog({ [index]: true })}
                   >
-                    Ajouter une unité
+                    Ajouter l'unité
                   </Button>
                   <UnitCostDialog
                     index={index}
@@ -122,7 +123,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
               )}
             {typeof unit.cost.points === "number" && (
               <Button size="small" onClick={() => handleAddUnitPoints(unit)}>
-                Ajouter un point
+                Ajouter l'unité
               </Button>
             )}
             {unitExists(unit) && (

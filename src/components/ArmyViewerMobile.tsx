@@ -13,6 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
+import { t, Translation } from "../helpers/translator";
 
 interface ArmyViewerInterface {
   units: { [key: string]: UnitDetails<Unit> };
@@ -43,10 +44,10 @@ const ArmyViewerMobile: React.FC<
         >
           <CardContent>
             <Typography variant="h5" component="h2">
-              {unit.unit}:{" "}
+              {t(unit.unit as Translation)}:{" "}
               {unit.equipmentOptions === "None"
                 ? ""
-                : unit.equipmentOptions.split(/(?=[A-Z])/).join(" ")}{" "}
+                : t(unit.equipmentOptions as Translation)}{" "}
               ({unit.unitSize})
             </Typography>
             <Table sx={{ maxWidth: "100%" }} aria-label="simple table">
@@ -81,7 +82,7 @@ const ArmyViewerMobile: React.FC<
             </Table>
             {!!unit.specialRules.length && (
               <Typography variant="body2" component="p">
-                Règles spéciales: {unit.specialRules.join(", ")}
+                <b>Règles spéciales:</b> {unit.specialRules.map((rule) => t(rule as Translation)).join(", ")}
               </Typography>
             )}
           </CardContent>

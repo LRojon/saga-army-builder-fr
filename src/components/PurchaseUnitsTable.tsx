@@ -19,6 +19,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { UnitCostDialog } from "./UnitCostDialog";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Unit, UnitDetails } from "../ArmyUnitTypes";
+import { t, Translation } from "../helpers/translator";
 
 interface UnitsProps {
   units: UnitDetails<Unit>[];
@@ -52,7 +53,7 @@ const ArmyTable: React.FC<UnitsProps> = ({
         aria-controls={`${army}-${unitName}-panel1a-content`}
         id={`${army}-${unitName}-panel1a-header`}
       >
-        <Typography>{unitName}</Typography>
+        <Typography>{t(unitName as Translation)}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <TableContainer component={Paper}>
@@ -79,12 +80,12 @@ const ArmyTable: React.FC<UnitsProps> = ({
                   }}
                 >
                   <TableCell component="th" scope="row" width={200}>
-                    {unit.equipmentOptions.split(/(?=[A-Z])/).join(" ")}
+                    {t(unit.equipmentOptions as Translation)}
                   </TableCell>
                   <TableCell align="right">{`${unit.armour.melee}(${unit.armour.shooting})`}</TableCell>
                   <TableCell align="right">{`${unit.aggression.melee}(${unit.aggression.shooting})`}</TableCell>
                   <TableCell align="right" width={250}>
-                    {unit.specialRules.join(", ")}
+                    {unit.specialRules.map((rule) => t(rule as Translation)).join(", ")}
                   </TableCell>
                   <TableCell align="right" width={80}>
                     {!!unit.cost.units &&

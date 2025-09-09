@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
 import { Unit, UnitDetails } from "../ArmyUnitTypes";
+import { t, Translation } from "../helpers/translator";
 
 const style = {
   /*position: "absolute" as "absolute",
@@ -48,14 +49,14 @@ const ArmyViewerDesktop: React.FC<ArmyViewerInterface> = ({ units }) => {
                 }}
               >
                 <TableCell component="th" scope="row">
-                  {unit.unit}
+                  {t(unit.unit as Translation)}
                 </TableCell>
                 <TableCell align="right">{unit.unitSize}</TableCell>
-                <TableCell align="right">{unit.equipmentOptions}</TableCell>
+                <TableCell align="right">{t(unit.equipmentOptions as Translation)}</TableCell>
                 <TableCell align="right">{`${unit.armour.melee} (${unit.armour.shooting})`}</TableCell>
                 <TableCell align="right">{`${unit.aggression.melee} (${unit.aggression.shooting})`}</TableCell>
                 <TableCell align="right" width={250}>
-                  {unit.specialRules.join(", ")}
+                  {unit.specialRules.map((rule) => t(rule as Translation)).join(", ")}
                 </TableCell>
               </TableRow>
             ))}
