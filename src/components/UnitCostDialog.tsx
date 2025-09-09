@@ -73,7 +73,7 @@ const UnitCostDialog: React.FC<UnitCostDialogInterface> = ({
 
   return (
     <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
-      <DialogTitle>Séléctionner</DialogTitle>
+      <DialogTitle>Séléctionner la variante</DialogTitle>
       <DialogContent>
         <Box component="form" sx={{ display: "flex", flexWrap: "wrap" }}>
           <List sx={style} component="nav">

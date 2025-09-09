@@ -67,10 +67,10 @@ const ArmyCard: React.FC<UnitsProps> = ({
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ padding: "8px" }} align="left">
-                    Armour Melee(Shooting)
+                    Armure CaC (Tir)
                   </TableCell>
                   <TableCell sx={{ padding: "8px" }} align="left">
-                    Aggression Melee(Shooting)
+                    Agréssivité CaC (Tir)
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -95,7 +95,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
             </Table>
             {!!unit.specialRules.length && (
               <Typography variant="body2" component="p">
-                Special rules: {unit.specialRules.join(", ")}
+                Règles spéciales: {unit.specialRules.join(", ")}
               </Typography>
             )}
           </CardContent>
@@ -110,7 +110,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
                     size="small"
                     onClick={() => setOpenUnitCostDialog({ [index]: true })}
                   >
-                    Add Unit
+                    Ajouter une unité
                   </Button>
                   <UnitCostDialog
                     index={index}
@@ -122,7 +122,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
               )}
             {typeof unit.cost.points === "number" && (
               <Button size="small" onClick={() => handleAddUnitPoints(unit)}>
-                Add Unit
+                Ajouter un point
               </Button>
             )}
             {unitExists(unit) && (
@@ -134,7 +134,7 @@ const ArmyCard: React.FC<UnitsProps> = ({
                     : () => handleRemoveUnitUnits(unit)
                 }
               >
-                Remove Unit
+                Retirer l'unité
               </Button>
             )}
           </CardActions>

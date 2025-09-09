@@ -72,7 +72,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ toggleDrawer, open }) => {
             <ListItemIcon>
               <DeleteIcon />
             </ListItemIcon>
-            <ListItemText primary="Clear current Army" />
+            <ListItemText primary="Effacer l'armée en cours" />
           </ListItemButton>
         </ListItem>
         <Divider />
@@ -82,12 +82,11 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ toggleDrawer, open }) => {
             component="div"
             sx={{ flexGrow: 1, p: "8px 16px" }}
           >
-            Saved Armies
+            Armées enregistrées
           </Typography>
           {usersSavedArmies.length === 0 && (
             <Typography sx={{ flexGrow: 1, p: "8px 16px" }}>
-              You haven't saved any armies yet. When you create one, it will
-              appear here.
+              Vous n'avez pas encore enregistré d'armées. Lorsque vous en créerez une, elle apparaîtra ici.
             </Typography>
           )}
           {usersSavedArmies.map((army, index) => (
@@ -108,7 +107,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ toggleDrawer, open }) => {
                     title={
                       <React.Fragment>
                         <Typography color="inherit">
-                          Use for linking army to your phone
+                          Scannez pour récupérer l'armée sur votre téléphone
                         </Typography>
                         <QRCode value={generateArmyUrl(army) as string} />
                       </React.Fragment>

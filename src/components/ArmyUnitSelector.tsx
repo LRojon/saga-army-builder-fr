@@ -12,7 +12,7 @@ const ArmyUnitSelector: React.FC<{}> = () => {
 
   return (
     <Box>
-      <Typography gutterBottom>{army.name} Units</Typography>
+      
       {(army?.units || []).map(({ unitName, variants }) => (
         <PurchaseUnits
           key={`${army.name}-${unitName}`}

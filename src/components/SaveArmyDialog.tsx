@@ -50,14 +50,14 @@ const SaveArmyDialog: React.FC<SaveArmyDialogInterface> = ({
 
   return (
     <Dialog open={open} onClose={() => setOpen(false)}>
-      <DialogTitle>Save</DialogTitle>
+      <DialogTitle>Enregistrez</DialogTitle>
       <DialogContent>
-        <DialogContentText>Give your Army a name</DialogContentText>
+        <DialogContentText>Donnez un nom à votre armée</DialogContentText>
         <TextField
           autoFocus
           margin="dense"
           id="name"
-          label="Army Name"
+          label="Nom de l'armée"
           type="text"
           fullWidth
           variant="standard"
@@ -66,8 +66,8 @@ const SaveArmyDialog: React.FC<SaveArmyDialogInterface> = ({
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => setOpen(false)}>Cancel</Button>
-        <Button onClick={() => handleSaveArmy()}>Save</Button>
+        <Button onClick={() => setOpen(false)}>Annuler</Button>
+        <Button onClick={() => handleSaveArmy()}>Enregistrer</Button>
       </DialogActions>
     </Dialog>
   );

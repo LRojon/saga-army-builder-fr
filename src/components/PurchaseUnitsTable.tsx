@@ -59,12 +59,12 @@ const ArmyTable: React.FC<UnitsProps> = ({
           <Table sx={{ minWidth: 650 }} aria-label={`${army}-army-table`}>
             <TableHead>
               <TableRow>
-                <TableCell>Equipment&nbsp;Options</TableCell>
-                <TableCell align="right">Armour&nbsp;Melee(Shooting)</TableCell>
+                <TableCell>Options d'équipement</TableCell>
+                <TableCell align="right">Armure&nbsp;CaC (Tir)</TableCell>
                 <TableCell align="right">
-                  Aggression&nbsp;Melee(Shooting)
+                  Agréssivité&nbsp;CaC (Tir)
                 </TableCell>
-                <TableCell align="right">Special Rules</TableCell>
+                <TableCell align="right">Règles spéciales</TableCell>
                 <TableCell align="right" />
               </TableRow>
             </TableHead>
